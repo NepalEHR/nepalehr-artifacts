@@ -14,19 +14,11 @@ sed -i '/ openimis.fhir.api.claim=/d' /etc/insurance-integration/insurance-integ
 sed -i '1i\ imisconnect.errortrace.include=true' /etc/insurance-integration/insurance-integration.properties
 sed -i '2i\ imisconnect.claimresource.save=true' /etc/insurance-integration/insurance-integration.properties
 sed -i '3i\ imisconnect.eligresource.save=false' /etc/insurance-integration/insurance-integration.properties
-sed -i '4i\ openimis.enterer.id=/g' /etc/insurance-integration/insurance-integration.properties
+sed -i '4i\ openimis.enterer.id=' /etc/insurance-integration/insurance-integration.properties
 sed -i '5i\ openimis.healthFacility.id=' /etc/insurance-integration/insurance-integration.properties
 sed -i '6i\ openimis.policy.enabled=true' /etc/insurance-integration/insurance-integration.properties
 sed -i '7i\ openimis.fhir.api.elig=' /etc/insurance-integration/insurance-integration.properties
 sed -i '8i\ openimis.fhir.api.claim=' /etc/insurance-integration/insurance-integration.properties
-#sed -i 's/^imisconnect.errortrace.include=.*/imisconnect.errortrace.include=true/g' ./abc.txt
-#sed -i 's/^imisconnect.claimresource.save.*/imisconnect.claimresource.save=true/g' ./abc.txt
-#sed -i 's/^imisconnect.eligresource.save.*/imisconnect.eligresource.save=false/g' ./abc.txt
-#sed -i 's/^openimis.enterer.id.*/openimis.enterer.id=VIDS0011/g' ./abc.txt
-#sed -i 's/^openimis.healthFacility.id.*/openimis.healthFacility.id=VIDS001/g' ./abc.txt
-#sed -i 's/^openimis.policy.enabled.*/openimis.policy.enabled=true/g' ./abc.txt
-#sed -i 's/^openimis.fhir.api.elig.*/openimis.fhir.api.elig=/g' ./abc.txt
-#sed -i 's/^openimis.fhir.api.claim.*/openimis.fhir.api.claim=/g' ./abc.txt
 wget -nc https://raw.githubusercontent.com/Possiblehealth/possible-artifacts/master/92-artifacts/imisintegration-0.0.1-SNAPSHOT.omod
 mv -vn imisintegration-0.0.1-SNAPSHOT.omod /opt/openmrs/modules/
 service openmrs restart
