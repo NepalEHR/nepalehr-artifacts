@@ -26,6 +26,7 @@ service openmrs status
 mkdir -p /opt/bahmni-insurance-addons/ 
 cd /opt/bahmni-insurance-addons/
 git clone https://github.com/Bahmni/bahmni_insurance_odoo.git
+cd /opt/bahmni-insurance-addons/bahmni_insurance_odoo
 git checkout develop
 echo "Script Ran Successfully"
 echo "Add below configuration manually"
